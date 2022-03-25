@@ -1,0 +1,24 @@
+
+<div class="div">   
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>From Child component   </h5>
+            <div>
+                
+                <button class="btn btn-primary"
+                (click) = "onPushDown()"
+                >Push Down</button>
+                <input type="text" class="form-control" [(ngModel)] = "username">
+            <input type="text" class="form-control" [(ngModel)] = "password">
+            <button class="btn btn-primary"
+            (click) = "onPullUp()">Pull Up</button>
+    
+        </div>
+    </div>
+</div>
+
+
+<app-grand-child [username] = "grandChildUsername"
+(passwordEmitter) = "onPasswordReceived($event)"
+></app-grand-child>
+
